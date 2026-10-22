@@ -1,0 +1,9 @@
+pre-commit:
+  commands:
+    gitleaks:
+      run: gitleaks git --pre-commit --staged --redact --no-banner .
+
+pre-push:
+  commands:
+    gitleaks:
+      run: gitleaks git --redact --no-banner --log-opts="HEAD --not --remotes=origin" .
